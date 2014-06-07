@@ -5,7 +5,7 @@
  * Source:
  * https://github.com/erming/jquery-string_to_color
  *
- * Version 0.0.0
+ * Version 0.1.0
  */
 (function($) {
 	/**
