@@ -104,8 +104,12 @@ hr {
 #input:focus {
 	border-color: #bbb;
 }
+#example h2 {
+	margin-top: 30px;
+}
 #example pre {
-	tab-size: 4;
+	-moz-tab-size: 4;
+	     tab-size: 4;
 	background-color: #f7f9fa;
 	border-color: #e9ecef;
 	border-width: 2px;
