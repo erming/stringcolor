@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+	<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<title>String to Color jQuery plugin</title>
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	
+	</head>
+	<body>
+	
+	<div class="container">
+	<header class="row">
+		<div class="col-sm-12">
+			<h1>
+				String to Color
+				<br><small>jQuery plugin</small>
+			</h1>
+		</div>
+	</header>
+	<div class="row">
+		<div class="col-sm-12">
+			<h3 id="color"></h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<div id="test-1">any string</div>
+		</div>
+		<div class="col-sm-6">
+			<div id="test-2">any string</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<label>
+				<h2>Write something:</h2>
+				<input id="input" value="any string">
+			</label>
+		</div>
+	</div>
+	<div class="row">
+		<div id="example" class="col-sm-12">
+			<hr>
+			<h2>Usage:</h2>
+<pre class="prettyprint linenums">
+/**
+ * Generate hex color code from a string.
+ *
+ * @param {String} str
+ */
+$.string_to_color(property);
+
+/**
+ * Set one or more CSS properties for the set
+ * of matched elements.
+ *
+ * @param {String|Array} property
+ * @param {String} str
+ */
+$(selector).string_to_color(property, string);
+</pre>
+		</div>
+	</div>
+	<div class="row">
+		<div id="view-source" class="col-sm-12">
+			<hr>
+			<a class="btn" href="http://github.com/erming/jquery-string_to_color">
+				View Source
+			</a>
+		</div>
+	</div>
+	<footer id="footer" class="row">
+		<div class="col-sm-12">
+			<small>
+				Plugin is based on <a href="https://github.com/brandoncorbin/string_to_color">string_to_color</a>
+				<br>Made by <a href="http://github.com/erming">erming</a>
+			</small>
+		</div>
+	</footer>
+	</div>
+	
+	<script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="jquery.string_to_color.js"></script>
+	<script>
+	var input = $("#input");
+	input.focus()
+	input.on("input", function() {
+		var str = $(this).val();
+		
+		//
+		// Using:
+		// $.string_to_color(str)
+		//
+		var c = $.string_to_color(str);
+		$("#color").html(c);
+		
+		//
+		// Using:
+		// $(selector).string_to_color(prop, str)
+		//
+		$("#test-1").string_to_color("color", str).html(str);
+		$("#test-2").string_to_color(["color", "border-color"], str).html(str);
+		
+	}).trigger("input");
+	
+	prettyPrint();
+	</script>
+	
+	</body>
+</html>
