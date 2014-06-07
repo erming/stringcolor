@@ -18,17 +18,14 @@ h1 {
 	color: #666;
 	font-size: 24px;
 	margin-bottom: 60px;
-	text-transform: uppercase;
-	text-align: center;
 }
 h1 small {
-	color: #ddd;
+	color: #ccc;
 	font-size: 14px;
 }
 h2 {
 	color: #aaa;
 	font-size: 18px;
-	text-transform: uppercase;
 }
 hr {
 	margin: 40px 0;
@@ -82,6 +79,9 @@ hr {
 	padding-right: 10px;
 	width: 25px;
 }
+#header {
+	text-align: center;
+}
 #color {
 	margin: -20px 0 20px 0;
 	text-align: center;
@@ -104,6 +104,9 @@ hr {
 }
 #input:focus {
 	border-color: #bbb;
+}
+#example h1 {
+	margin-bottom: 10px;
 }
 #example h2 {
 	margin-top: 30px;

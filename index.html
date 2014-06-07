@@ -15,7 +15,7 @@
 	<body>
 	
 	<div class="container">
-	<header class="row">
+	<header id="header" class="row">
 		<div class="col-sm-12">
 			<h1>
 				String to Color
@@ -47,12 +47,12 @@
 	<div class="row">
 		<div id="example" class="col-sm-12">
 			<hr>
-			<h2>jQuery Plugin:</h2>
+			<h1>Plugin API:</h1>
 <pre class="prettyprint linenums">
 /**
  * Generate hex color code from a string.
  *
- * @param {String} str
+ * @param {String} string
  * @return {String}
  */
 $.string_to_color(string);
@@ -62,7 +62,7 @@ $.string_to_color(string);
  * of matched elements.
  *
  * @param {String|Array} property
- * @param {String} str
+ * @param {String} string
  */
 $(selector).string_to_color(property, string);
 </pre>

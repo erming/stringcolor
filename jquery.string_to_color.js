@@ -31,7 +31,6 @@
 			var props = [].concat(property);
 			var $this = $(this);
 			$.map(props, function(p) {
-				console.log(p);
 				$this.css(p, $.string_to_color(string));
 			});
 		});
