@@ -6,7 +6,7 @@ A GitHub-hosted demo can be found here:
 ## Install
 
 Manual install:  
-  1. Download [jquery.string_to_color.js](https://raw.githubusercontent.com/erming/jquery-string_to_color/master/jquery.string_to_color.js)
+  1. Download [jquery.string_to_color.js](https://raw.githubusercontent.com/erming/jquery-string_to_color/gh-pages/jquery.string_to_color.js)
   2. Include source: `<script src="jquery.string_to_color.js"></script>`
 
 ## Credits
