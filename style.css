@@ -90,6 +90,7 @@ hr {
 #test-2 {
 	border: 2px solid #eee;
 	border-radius: 4px;
+	color: #fff;
 	margin-bottom: 20px;
 	padding: 10px 14px;
 }
