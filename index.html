@@ -19,8 +19,13 @@
 		<div class="col-sm-12">
 			<h1>
 				String to Color
-				<br><small>jQuery plugin</small>
 			</h1>
+			<h2 class="light">
+				jQuery plugin
+			</h2>
+			<h2>
+				"Generate a consistent color from any string."
+			</h2>
 		</div>
 	</header>
 	<div class="row">
@@ -29,62 +34,23 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-6">
-			<div id="test-1">any string</div>
-		</div>
-		<div class="col-sm-6">
-			<div id="test-2">any string</div>
+		<div class="col-sm-12">
+			<div id="palette"></div>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-sm-12">
 			<label>
 				<h2>Write something:</h2>
-				<input id="input" value="Oooh, shiny!">
+				<input id="input" value="jQuery">
 			</label>
-		</div>
-	</div>
-	<div class="row">
-		<div id="example" class="col-sm-12">
-			<hr>
-			<h1>Plugin API:</h1>
-<pre class="prettyprint linenums">
-/**
- * Generate hex color code from a string.
- *
- * @param {String} string
- * @return {String}
- */
-$.string_to_color(string);
-
-/**
- * Set one or more CSS properties for the set
- * of matched elements.
- *
- * @param {String|Array} property
- * @param {String} string
- */
-$(selector).string_to_color(property, string);
-</pre>
-<h2>Example:</h2>
-<pre class="prettyprint linenums">
-// Generate hex color.
-var c = $.string_to_color("foo");
-alert(c); // #0073ad
-
-// Change border color and font color.
-$(".foo").string_to_color(
-	["border-color", "color"],
-	"hello" // #ff00b9
-);
-</pre>
 		</div>
 	</div>
 	<div class="row">
 		<div id="view-source" class="col-sm-12">
 			<hr>
 			<a class="btn" href="http://github.com/erming/jquery-string_to_color">
-				View Source
+				View on GitHub
 			</a>
 		</div>
 	</div>
@@ -98,25 +64,29 @@ $(".foo").string_to_color(
 	</footer>
 	</div>
 	
-	<script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="jquery.string_to_color.js"></script>
+	
 	<script>
 	var input = $("#input");
-	input.focus()
-	input.on("input", function() {
-		var val = $(this).val();
-		
-		var c = $.string_to_color(val);
-		$("#color").html(c);
-		
-		$("#test-1").string_to_color(["border-color", "color"], val).html(val);
-		$("#test-2").string_to_color(["background", "border-color"], val).html(val);
-		
-	}).trigger("input");
 	
-	// Prettify <pre> tags.
-	prettyPrint();
+	input.on("input", function() {
+		var value = $(this).val();
+		
+		// Generate hex color code.
+		$("#color").html(
+			$.string_to_color(value)
+		);
+		
+		// Set CSS property.
+		$("#palette")
+			.string_to_color(["background"], value)
+			.html(value);
+	});
+	
+	input.trigger("input");
+	input.val("");
+	input.focus();
 	</script>
 	
 	</body>

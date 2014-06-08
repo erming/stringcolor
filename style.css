@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
 body {
 	margin: 50px 0;
@@ -15,30 +15,31 @@ label {
 	width: 100%;
 }
 h1 {
-	color: #666;
-	font-size: 24px;
-	margin-bottom: 60px;
+	color: #222;
+	font: 300 54px Lato, sans-serif;
 }
 h1 small {
+	display: block;
 	color: #ccc;
 	font-size: 14px;
+	margin-top: 10px;
 }
 h2 {
-	color: #aaa;
+	color: #777;
+	font: 28px Lato, sans-serif;
 	font-size: 18px;
 }
 hr {
-	margin: 40px 0;
-	border-style: dashed;
-	border-color: #eee;
+	border-color: #e9ecef;
+	margin: 50px 0;
 }
 .container {
 	max-width: 420px;
 }
 .btn {
-	border: 2px solid #1abc9c;
+	border: 2px solid #00c165;
 	border-radius: 5px;
-	color: #1abc9c;
+	color: #00c165;
 	display: inline-block;
 	font: bold 12px Lato, sans-serif;
 	letter-spacing: 1px;
@@ -48,54 +49,42 @@ hr {
 	word-spacing: 3px;
 }
 .btn:hover {
-	background: #1abc9c;
+	background: #00c165;
 	color: #fff;
 	text-decoration: none;
 }
 .btn:active {
-	background: #16a085;
-	border-color: #16a085;
+	opacity: .8;
 	box-shadow: none;
-}
-.linenums {
-	counter-reset: i;
-	list-style: none;
-	margin: 0;
-}
-.linenums li {
-	clear: both;
-}
-.linenums li:before {
-	-webkit-user-select: none;
-	        user-select: none;
-	content: counter(i);
-	counter-increment: i;
-	color: #ccc;
-	float: left;
-	font-size: 10px;
-	line-height: 18px;
-	margin-right: 8px;
-	text-align: right;
-	padding-right: 10px;
-	width: 25px;
 }
 #header {
 	text-align: center;
+	padding-bottom: 20px;
+}
+#header h2 {
+	color: #888;
+	font: 300 26px Lato, sans-serif;
+	line-height: 1.5;
+}
+#header .light {
+	color: #d0d5d7;
 }
 #color {
-	margin: -20px 0 20px 0;
+	margin-bottom: 20px;
 	text-align: center;
 }
-#test-1,
-#test-2 {
-	border: 2px solid #eee;
+#palette {
 	border-radius: 4px;
 	color: #fff;
+	font-size: 24px;
 	margin-bottom: 20px;
-	padding: 10px 14px;
+	text-align: center;
+	transition: background .4s;
+	padding: 20px 0;
 }
 #input {
 	border: 2px solid #eee;
+	border-color: #e9ecef;
 	border-radius: 4px;
 	font-weight: normal;
 	outline: 0;
@@ -103,21 +92,7 @@ hr {
 	width: 100%;
 }
 #input:focus {
-	border-color: #bbb;
-}
-#example h1 {
-	margin-bottom: 10px;
-}
-#example h2 {
-	margin-top: 30px;
-}
-#example pre {
-	-moz-tab-size: 4;
-	     tab-size: 4;
-	background-color: #f7f9fa;
-	border-color: #e9ecef;
-	border-width: 2px;
-	word-wrap: normal;
+	border-color: #bdc3c7;
 }
 #view-source {
 	text-align: center;
