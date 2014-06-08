@@ -105,24 +105,17 @@ $(".foo").string_to_color(
 	var input = $("#input");
 	input.focus()
 	input.on("input", function() {
-		var str = $(this).val();
+		var val = $(this).val();
 		
-		//
-		// Using:
-		// $.string_to_color(string)
-		//
-		var c = $.string_to_color(str);
+		var c = $.string_to_color(val);
 		$("#color").html(c);
 		
-		//
-		// Using:
-		// $(selector).string_to_color(property, string)
-		//
-		$("#test-1").string_to_color(["border-color", "color"], str).html(str);
-		$("#test-2").string_to_color(["background", "border-color"], str).html(str);
+		$("#test-1").string_to_color(["border-color", "color"], val).html(val);
+		$("#test-2").string_to_color(["background", "border-color"], val).html(val);
 		
 	}).trigger("input");
 	
+	// Prettify <pre> tags.
 	prettyPrint();
 	</script>
 	
