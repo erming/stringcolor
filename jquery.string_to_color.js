@@ -38,12 +38,11 @@
 })(jQuery);
  
 /*!
- * Name: str_to_color
+ * Name: string_to_color
  * Author: Brandon Corbin [code@icorbin.com]
  * Website: http://icorbin.com
  */
 function string_to_color(str, options) {
-	
 	// Generate a Hash for the String
 	var hash = function(word) {
 		var h = 0;
@@ -76,6 +75,8 @@ function string_to_color(str, options) {
 		return color;
 	};
 	
-	return shade(int_to_rgba(hash(str)), -10);
-
+	return shade(
+		int_to_rgba(hash(str)),
+		-10
+	);
 }
