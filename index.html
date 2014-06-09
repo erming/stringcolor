@@ -15,53 +15,60 @@
 	<body>
 	
 	<div class="container">
-	<header id="header" class="row">
-		<div class="col-sm-12">
-			<h1>
-				String to Color
-			</h1>
-			<h2 class="light">
-				jQuery plugin
-			</h2>
-			<h2>
-				"Generate a consistent color from any string."
-			</h2>
+		<header id="header" class="row">
+			<div class="col-sm-12">
+				<h1>
+					String to Color
+				</h1>
+				<h2 class="light">
+					jQuery plugin
+				</h2>
+				<h2>
+					"Generate a consistent color from any string."
+				</h2>
+			</div>
+		</header>
+		<div class="row">
+			<div class="col-sm-12">
+				<h3 id="color"></h3>
+			</div>
 		</div>
-	</header>
-	<div class="row">
-		<div class="col-sm-12">
-			<h3 id="color"></h3>
+		<div class="row">
+			<div class="col-sm-12">
+				<div id="palette">
+					<small>$.string_to_color("</small><span></span><small>");</small>
+				</div>
+			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-12">
-			<div id="palette"></div>
+		<div class="row">
+			<div class="col-sm-12">
+				<label>
+					<h2>Write something:</h2>
+					<input id="input" value="jQuery">
+				</label>
+			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-12">
-			<label>
-				<h2>Write something:</h2>
-				<input id="input" value="jQuery">
-			</label>
+		<div id="example" class="row">
+			<div class="col-sm-12">
+				<h1>Plugin API</h1>
+				<script src="https://gist.github.com/erming/831fb24d978ded49cc7f.js"></script>
+			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div id="view-source" class="col-sm-12">
-			<hr>
-			<a class="btn" href="http://github.com/erming/jquery-string_to_color">
-				View on GitHub
-			</a>
+		<div id="github" class="row">
+			<div class="col-sm-12">
+				<a class="btn" href="http://github.com/erming/jquery-string_to_color">
+					View on GitHub
+				</a>
+			</div>
 		</div>
-	</div>
-	<footer id="footer" class="row">
-		<div class="col-sm-12">
-			<small>
-				Plugin is based on <a href="https://github.com/brandoncorbin/string_to_color">string_to_color</a>
-				<br>Made by <a href="http://github.com/erming">erming</a>
-			</small>
-		</div>
-	</footer>
+		<footer id="footer" class="row">
+			<div class="col-sm-12">
+				<small>
+					Plugin is based on <a href="https://github.com/brandoncorbin/string_to_color">string_to_color</a>
+					<br>Made by <a href="http://github.com/erming">erming</a>
+				</small>
+			</div>
+		</footer>
 	</div>
 	
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -72,6 +79,11 @@
 	
 	input.on("input", function() {
 		var value = $(this).val();
+		$("#palette small").toggle(value.length < 15);
+		
+		if (value == "") {
+				value = "jQuery";
+		}
 		
 		// Generate hex color code.
 		$("#color").html(
@@ -81,7 +93,8 @@
 		// Set CSS property.
 		$("#palette")
 			.string_to_color(["background"], value)
-			.html(value);
+			.find("span")
+				.html(value);
 	});
 	
 	input.trigger("input");
