@@ -1,28 +1,25 @@
 <!doctype html>
 <html>
 	<head>
-	
+
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
-	<title>String to Color jQuery plugin</title>
-	
+
+	<title>stringcolor</title>
+
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css">
-	
+
 	</head>
 	<body>
-	
+
 	<div class="container">
 		<header id="header" class="row">
 			<div class="col-sm-12">
 				<h1>
-					String to Color
+					stringcolor
 				</h1>
-				<h2 class="light">
-					jQuery plugin
-				</h2>
 				<h2>
 					"Generate a consistent color from any string."
 				</h2>
@@ -36,7 +33,7 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div id="palette">
-					<small>$.string_to_color("</small><span></span><small>");</small>
+					<small>$.stringcolor("</small><span></span><small>");</small>
 				</div>
 			</div>
 		</div>
@@ -48,15 +45,9 @@
 				</label>
 			</div>
 		</div>
-		<div id="example" class="row">
-			<div class="col-sm-12">
-				<h1>Plugin API</h1>
-				<script src="https://gist.github.com/erming/831fb24d978ded49cc7f.js"></script>
-			</div>
-		</div>
 		<div id="github" class="row">
 			<div class="col-sm-12">
-				<a class="btn" href="http://github.com/erming/jquery-string_to_color">
+				<a class="btn" href="http://github.com/erming/stringcolor">
 					View on GitHub
 				</a>
 			</div>
@@ -70,37 +61,37 @@
 			</div>
 		</footer>
 	</div>
-	
+
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="jquery.string_to_color.js"></script>
-	
+	<script src="stringcolor.js"></script>
+
 	<script>
 	var input = $("#input");
-	
+
 	input.on("input", function() {
 		var value = $(this).val();
 		$("#palette small").toggle(value.length < 15);
-		
+
 		if (value == "") {
 				value = "jQuery";
 		}
-		
+
 		// Generate hex color code.
 		$("#color").html(
-			$.string_to_color(value)
+			$.stringcolor(value)
 		);
-		
+
 		// Set CSS property.
 		$("#palette")
-			.string_to_color(["background"], value)
+			.stringcolor(["background"], value)
 			.find("span")
 				.html(value);
 	});
-	
+
 	input.trigger("input");
 	input.val("");
 	input.focus();
 	</script>
-	
+
 	</body>
 </html>
